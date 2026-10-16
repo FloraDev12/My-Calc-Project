@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calc — Premium Calculator</title>
+  <meta name="description" content="A stunning premium calculator with smooth animations, history log, and advanced operations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="app-wrapper">
+    <!-- History Panel -->
+    <aside class="history-panel" id="historyPanel">
+      <div class="history-header">
+        <span class="history-title">History</span>
+        <button class="clear-btn" id="clearHistoryBtn" title="Clear history">✕ Clear</button>
+      </div>
+      <ul class="history-list" id="historyList">
+        <li class="history-empty">No calculations yet</li>
+      </ul>
+    </aside>
+
+    <!-- Calculator -->
+    <main class="calculator" id="calculator">
+
+      <!-- Display -->
+      <div class="display">
+        <div class="display-expression" id="expression">&nbsp;</div>
+        <div class="display-result" id="result">0</div>
+        <div class="display-meta">
+          <span class="mode-label" id="modeLabel">DEG</span>
+          <button class="history-toggle" id="historyToggleBtn" title="Toggle history">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="12 8 12 12 14 14"/><circle cx="12" cy="12" r="9"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Button Grid -->
+      <div class="button-grid">
+
+        <!-- Row 1 -->
+        <button class="btn btn-func" id="btn-deg" data-action="toggleDeg">DEG</button>
+        <button class="btn btn-func" data-action="sin">sin</button>
+        <button class="btn btn-func" data-action="cos">cos</button>
+        <button class="btn btn-func" data-action="tan">tan</button>
+
+        <!-- Row 2 -->
+        <button class="btn btn-func" data-action="sqrt">√</button>
+        <button class="btn btn-func" data-action="square">x²</button>
+        <button class="btn btn-func" data-action="log">log</button>
+        <button class="btn btn-func" data-action="ln">ln</button>
+
+        <!-- Row 3 -->
+        <button class="btn btn-func" data-action="pi">π</button>
+        <button class="btn btn-func" data-action="e">e</button>
+        <button class="btn btn-func" data-action="openParen">(</button>
+        <button class="btn btn-func" data-action="closeParen">)</button>
+
+        <!-- Row 4 -->
+        <button class="btn btn-clear" data-action="allClear">AC</button>
+        <button class="btn btn-clear" data-action="clearEntry">CE</button>
+        <button class="btn btn-clear" data-action="backspace">⌫</button>
+        <button class="btn btn-operator" data-action="divide">÷</button>
+
+        <!-- Row 5 -->
+        <button class="btn btn-number" data-action="digit" data-value="7">7</button>
+        <button class="btn btn-number" data-action="digit" data-value="8">8</button>
+        <button class="btn btn-number" data-action="digit" data-value="9">9</button>
+        <button class="btn btn-operator" data-action="multiply">×</button>
+
+        <!-- Row 6 -->
+        <button class="btn btn-number" data-action="digit" data-value="4">4</button>
+        <button class="btn btn-number" data-action="digit" data-value="5">5</button>
+        <button class="btn btn-number" data-action="digit" data-value="6">6</button>
+        <button class="btn btn-operator" data-action="subtract">−</button>
+
+        <!-- Row 7 -->
+        <button class="btn btn-number" data-action="digit" data-value="1">1</button>
+        <button class="btn btn-number" data-action="digit" data-value="2">2</button>
+        <button class="btn btn-number" data-action="digit" data-value="3">3</button>
+        <button class="btn btn-operator" data-action="add">+</button>
+
+        <!-- Row 8 -->
+        <button class="btn btn-number btn-wide" data-action="digit" data-value="0">0</button>
+        <button class="btn btn-number" data-action="decimal">.</button>
+        <button class="btn btn-equals" data-action="equals">=</button>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
